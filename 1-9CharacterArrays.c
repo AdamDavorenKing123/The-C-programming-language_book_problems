@@ -2,6 +2,16 @@
 
 #define MAXLINE 1000 //max input line length
 
+/*********************************************************
+* pseuodcode representation                              *
+*														 *
+* while(there's another line)							 *
+*	if(it's longer than the prev longest)				 *
+*	  (save it)											 *
+*	  (save its length)									 *
+* print longest line									 *
+*********************************************************/
+
 int getline(char line[], int maxline);
 void copy(char to[], char from[]);
 
@@ -21,6 +31,8 @@ main()
 		}
 	if (max > 0) //there was a line
 		printf("%s", longest);
+	else
+		printf("ERROR: NO LINE DETECTED.\nPLEASE INPUT LINE(S)\n");
 	return 0;
 }
 
