@@ -27,5 +27,8 @@
     <ClCompile Include="1-9CharacterArrays.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BroCodeChallenges.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
