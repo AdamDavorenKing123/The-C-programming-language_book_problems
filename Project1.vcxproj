@@ -131,6 +131,7 @@
     <ClCompile Include="1-6Arrays.c" />
     <ClCompile Include="1-7Functions.c" />
     <ClCompile Include="1-9CharacterArrays.c" />
+    <ClCompile Include="2-1dataTypeSizes.c" />
     <ClCompile Include="BroCodeChallenges.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
