@@ -39,5 +39,8 @@
     <ClCompile Include="nested_loops.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Array_Sorting.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
