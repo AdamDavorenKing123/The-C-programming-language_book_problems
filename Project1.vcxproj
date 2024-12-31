@@ -134,9 +134,12 @@
     <ClCompile Include="2-1dataTypeSizes.c" />
     <ClCompile Include="2-3HexToInteger.c" />
     <ClCompile Include="Array_Sorting.c" />
+    <ClCompile Include="BitwiseOps.c" />
     <ClCompile Include="BroCodeChallenges.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="nested_loops.c" />
+    <ClCompile Include="NumberGuessingGame.c" />
+    <ClCompile Include="Structs.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

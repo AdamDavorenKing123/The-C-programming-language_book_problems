@@ -42,5 +42,14 @@
     <ClCompile Include="Array_Sorting.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Structs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberGuessingGame.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BitwiseOps.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
