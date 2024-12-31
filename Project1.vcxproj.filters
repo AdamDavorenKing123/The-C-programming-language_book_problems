@@ -33,5 +33,8 @@
     <ClCompile Include="2-1dataTypeSizes.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="2-3HexToInteger.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
