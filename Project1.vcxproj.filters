@@ -54,5 +54,8 @@
     <ClCompile Include="WritingFiles.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="NaughtsAndCrosses.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

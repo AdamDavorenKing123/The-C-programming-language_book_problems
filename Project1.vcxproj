@@ -137,6 +137,7 @@
     <ClCompile Include="BitwiseOps.c" />
     <ClCompile Include="BroCodeChallenges.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="NaughtsAndCrosses.c" />
     <ClCompile Include="nested_loops.c" />
     <ClCompile Include="NumberGuessingGame.c" />
     <ClCompile Include="Structs.c" />
