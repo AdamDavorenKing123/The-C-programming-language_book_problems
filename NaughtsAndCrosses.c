@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <time.h>
 
+/*
 char board[3][3];
 const char PLAYER = 'X';
 const char COMPUTER = '0';
@@ -160,3 +161,4 @@ void printWinner(char winner)
 		printf("IT'S A DRAW");
 	}
 }
+*/
