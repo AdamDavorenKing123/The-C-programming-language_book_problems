@@ -22,8 +22,16 @@ I could do game1[][] game2[][] game3[][]
             ...        ...     ....
             ...        ...     game9[][]
 
+void resetBoard();
+print the board - void printBoard();
 play begins in middle game (game5[][]) 
+func - move to next game - the next game depends on the space which was selected in the last.
+int checkFreeSpaces();
+void playerMove();
+char checkWinner();
+void printWinner(char);
 */
+
 char game1[3][3];
 char game2[3][3];
 char game3[3][3];
@@ -33,20 +41,48 @@ char game6[3][3];
 char game7[3][3];
 char game8[3][3];
 char game9[3][3];
+ 
+/*
+ \  /
+  \/
+  /\ 
+ /  \
 
+  ---
+ |	 |
+ |	 |
+  ---
+ */
 void printBoard();
+void resetBoard();
 
 int main() {
-
+	void resetBoard();
 	printBoard();
-
 
 	return 0;
 }
 
+void resetBoard() //clear all squares in each sub-game makes them blank 
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			game1[i][j] = ' ';
+			game2[i][j] = ' ';
+			game3[i][j] = ' ';
+			game4[i][j] = ' ';
+			game5[i][j] = ' ';
+			game6[i][j] = ' ';
+			game7[i][j] = ' ';
+			game8[i][j] = ' ';
+			game9[i][j] = ' ';
+		}
 
+	}
 
-
+}
 
 void printBoard()
 {
