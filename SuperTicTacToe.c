@@ -32,6 +32,22 @@ char checkWinner();
 void printWinner(char);
 */
 
+
+/*
+switch case choice
+choose 1-9
+choose 1:
+enter x,y
+corresponds to game1[x][y]
+choose 2:
+enter x,y
+corresponds to game2[x][y]
+
+*/
+
+const char PLAYER1 = 'X';
+const char PLAYER2 = 'O';
+
 char game1[3][3];
 char game2[3][3];
 char game3[3][3];
@@ -41,7 +57,7 @@ char game6[3][3];
 char game7[3][3];
 char game8[3][3];
 char game9[3][3];
- 
+char metaGame[3][3]; // meta(big) gameboard
 /*
  \  /
   \/
@@ -55,10 +71,37 @@ char game9[3][3];
  */
 void printBoard();
 void resetBoard();
+void printWinner(char winner);
+void playerMove();
+int checkFreeSpaces();
+//void playerMove();
+//void playerMove();
+// char checkWinner();
+
+//void resetBoard();      Y
+//void printBoard();      Y  
+//int checkFreeSpaces();  Y
+//void playerMove();      
+//void computerMove();    
+//char checkWinner();     
+//void printWinner(char); Y
 
 int main() {
+	char winner = ' ';
 	void resetBoard();
+	while (winner == ' ' && checkFreeSpaces() != 0) {
+		printBoard();
+		playerMove();
+		
+		
+		if (winner != ' ' || checkFreeSpaces() == 0)
+		{
+			break;
+		}
+	}
+
 	printBoard();
+	printWinner(winner);
 
 	return 0;
 }
@@ -78,6 +121,7 @@ void resetBoard() //clear all squares in each sub-game makes them blank
 			game7[i][j] = ' ';
 			game8[i][j] = ' ';
 			game9[i][j] = ' ';
+			metaGame[i][j] = ' ';
 		}
 
 	}
@@ -108,4 +152,276 @@ void printBoard()
 	printf("\n");
 	printf("\n");
 
+}
+
+int checkFreeSpaces()
+{
+	int freeSpaces = 81;
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (game1[i][j] != ' ' || game2[i][j] != ' ' || game3[i][j] != ' ' || game4[i][j] != ' ' || game5[i][j] != ' ' || game6[i][j] != ' ' || game7[i][j] != ' ' || game8[i][j] != ' ' || game9[i][j] != ' ')
+			{
+				freeSpaces--;
+			}
+		}
+	}
+	return freeSpaces;
+}
+void printWinner(char winner)
+{
+	if (winner == PLAYER1)
+	{
+		printf("X's win");
+	}
+	else if (winner == PLAYER2)
+	{
+		printf("0's win");
+	}
+	else
+	{
+		printf("IT'S A DRAW");
+	}
+}
+//
+//char checkWinner()
+//{
+//	char winner = ' ';
+//	for (int i = 0;i < 3; i++)
+//	{
+//		check rows
+//		if (game[i][0] == game[i][1] && game[i][0] == game[i][2] && game[i][0] != ' ')
+//		{
+//			winner = game[i][0];
+//		}
+//		check columns
+//		else if (game[0][i] == game[1][i] && game[0][i] == game[2][i] && game[0][i] != ' ')
+//		{
+//			winner = game[0][i];
+//		}
+//	}
+//	check diagonals
+//	if (game[0][0] == game[1][1] && game[0][0] == game[2][2] && game[0][0] != ' ')
+//	{
+//		winner = game[0][0];
+//	}
+//	check other diagonal
+//	else if (game[0][2] == game[1][1] && game[0][2] == game[2][0] && game[0][2] != ' ')
+//	{
+//		winner = game[0][2];
+//	}
+//	return winner;
+//}
+
+void playerMove()
+{
+	int choice;
+	int x, y;
+	printf("Please enter a number 1-9 to decide which sub-game you would like to start in: ");
+	scanf_s("%d", &choice);
+
+	switch (choice)
+	{
+	case 1:
+		//do
+		//{
+		//	userInput(&x, &y);
+		//	if (x <= 0 || x >= 2 || y <= 0 || y >= 2)
+		//	{
+		//		printf("invalid move -> out of bounds\n");
+		//	}
+		//	else if (game1[x][y] != ' ')
+		//	{
+		//		printf("INVALID MOVE\n");
+		//	}
+		//	else
+		//	{
+		//		game1[x][y] = PLAYER1;
+		//		break;
+		//	}
+		do
+		{
+			printf("Enter row #(1-3): ");
+			scanf_s("%d", &x);
+			x--;
+			printf("Enter column #(1-3): ");
+			scanf_s("%d", &y);
+			y--;
+
+			if (game1[x][y] != ' ')
+			{
+				printf("INVALID MOVE\n");
+			}
+			else
+			{
+				game1[x][y] = PLAYER1;
+				break;
+			}
+		} while (game1[x][y] != ' ');
+
+	case 2:
+		do
+		{
+			printf("Enter row #(1-3): ");
+			scanf_s("%d", &x);
+			x--;
+			printf("Enter column #(1-3): ");
+			scanf_s("%d", &y);
+			y--;
+
+			if (game2[x][y] != ' ')
+			{
+				printf("INVALID MOVE\n");
+			}
+			else
+			{
+				game2[x][y] = PLAYER1;
+				break;
+			}
+		} while (game2[x][y] != ' ');
+	case 3:
+		do
+		{
+			printf("Enter row #(1-3): ");
+			scanf_s("%d", &x);
+			x--;
+			printf("Enter column #(1-3): ");
+			scanf_s("%d", &y);
+			y--;
+
+			if (game3[x][y] != ' ')
+			{
+				printf("INVALID MOVE\n");
+			}
+			else
+			{
+				game3[x][y] = PLAYER1;
+				break;
+			}
+		} while (game3[x][y] != ' ');
+	case 4:
+		do
+		{
+			printf("Enter row #(1-3): ");
+			scanf_s("%d", &x);
+			x--;
+			printf("Enter column #(1-3): ");
+			scanf_s("%d", &y);
+			y--;
+
+			if (game4[x][y] != ' ')
+			{
+				printf("INVALID MOVE\n");
+			}
+			else
+			{
+				game4[x][y] = PLAYER1;
+				break;
+			}
+		} while (game4[x][y] != ' ');
+	case 5:
+		do
+		{
+			printf("Enter row #(1-3): ");
+			scanf_s("%d", &x);
+			x--;
+			printf("Enter column #(1-3): ");
+			scanf_s("%d", &y);
+			y--;
+
+			if (game5[x][y] != ' ')
+			{
+				printf("INVALID MOVE\n");
+			}
+			else
+			{
+				game5[x][y] = PLAYER1;
+				break;
+			}
+		} while (game5[x][y] != ' ');
+	case 6:
+		do
+		{
+			printf("Enter row #(1-3): ");
+			scanf_s("%d", &x);
+			x--;
+			printf("Enter column #(1-3): ");
+			scanf_s("%d", &y);
+			y--;
+
+			if (game6[x][y] != ' ')
+			{
+				printf("INVALID MOVE\n");
+			}
+			else
+			{
+				game6[x][y] = PLAYER1;
+				break;
+			}
+		} while (game6[x][y] != ' ');
+	case 7:
+		do
+		{
+			printf("Enter row #(1-3): ");
+			scanf_s("%d", &x);
+			x--;
+			printf("Enter column #(1-3): ");
+			scanf_s("%d", &y);
+			y--;
+
+			if (game7[x][y] != ' ')
+			{
+				printf("INVALID MOVE\n");
+			}
+			else
+			{
+				game7[x][y] = PLAYER1;
+				break;
+			}
+		} while (game7[x][y] != ' ');
+	case 8:
+		do
+		{
+			printf("Enter row #(1-3): ");
+			scanf_s("%d", &x);
+			x--;
+			printf("Enter column #(1-3): ");
+			scanf_s("%d", &y);
+			y--;
+
+			if (game8[x][y] != ' ')
+			{
+				printf("INVALID MOVE\n");
+			}
+			else
+			{
+				game8[x][y] = PLAYER1;
+				break;
+			}
+		} while (game8[x][y] != ' ');
+	case 9:
+		do
+		{
+			printf("Enter row #(1-3): ");
+			scanf_s("%d", &x);
+			x--;
+			printf("Enter column #(1-3): ");
+			scanf_s("%d", &y);
+			y--;
+
+			if (game9[x][y] != ' ')
+			{
+				printf("INVALID MOVE\n");
+			}
+			else
+			{
+				game9[x][y] = PLAYER1;
+				break;
+			}
+		} while (game9[x][y] != ' ');
+	default:
+		printf("You f****d up!");
+	}
 }
