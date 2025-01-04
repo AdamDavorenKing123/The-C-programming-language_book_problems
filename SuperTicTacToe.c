@@ -45,7 +45,7 @@ corresponds to game2[x][y]
 
 */
 
-const char PLAYER1 = 'X';
+const char PLAYER1 = 'X'; 
 const char PLAYER2 = 'O';
 
 char game1[3][3];
@@ -69,11 +69,15 @@ char metaGame[3][3]; // meta(big) gameboard
  |	 |
   ---
  */
-void printBoard();
 void resetBoard();
-void printWinner(char winner);
-void playerMove();
+void printBoard();
 int checkFreeSpaces();
+void playerMoveX();
+//void playerMoveO();   //will be the same just print O instead of X
+char checkWinner();   // win conditions to check
+void printWinner(char winner); 
+
+
 //void playerMove();
 //void playerMove();
 // char checkWinner();
@@ -87,10 +91,12 @@ int checkFreeSpaces();
 //void printWinner(char); Y
 
 int main() {
-	char winner = ' ';
+	char winner = ' '; //if winner = empty space then currently no winner
 	void resetBoard();
+	
 	while (winner == ' ' && checkFreeSpaces() != 0) {
 		printBoard();
+		checkFreeSpaces();
 		playerMove();
 		
 		
@@ -132,23 +138,23 @@ void printBoard()
 {
 	printf(" %c  | %c  | %c ", game1[0][0], game1[0][1], game1[0][2]); printf("\t %c  | %c  | %c ", game2[0][0], game2[0][1], game2[0][2]); printf("\t %c  | %c  | %c ", game3[0][0], game3[0][1], game3[0][2]);
 	printf("\n---|---|---");  printf("\t---|---|---");  printf("\t---|---|---\n");
-	printf(" %c  | %c  | %c ", game1[0][0], game1[0][1], game1[0][2]); printf("\t %c  | %c  | %c ", game2[0][0], game2[0][1], game2[0][2]); printf("\t %c  | %c  | %c ", game3[0][0], game3[0][1], game3[0][2]);
+	printf(" %c  | %c  | %c ", game1[1][0], game1[1][1], game1[1][2]); printf("\t %c  | %c  | %c ", game2[1][0], game2[1][1], game2[1][2]); printf("\t %c  | %c  | %c ", game3[1][0], game3[1][1], game3[1][2]);
 	printf("\n---|---|---");  printf("\t---|---|---");  printf("\t---|---|---\n");
-	printf(" %c  | %c  | %c ", game1[0][0], game1[0][1], game1[0][2]); printf("\t %c  | %c  | %c ", game2[0][0], game2[0][1], game2[0][2]); printf("\t %c  | %c  | %c ", game3[0][0], game3[0][1], game3[0][2]);
+	printf(" %c  | %c  | %c ", game1[2][0], game1[2][1], game1[2][2]); printf("\t %c  | %c  | %c ", game2[2][0], game2[2][1], game2[2][2]); printf("\t %c  | %c  | %c ", game3[2][0], game3[2][1], game3[2][2]);
 	printf("\n");
 	printf("\n");
 	printf(" %c  | %c  | %c ", game4[0][0], game4[0][1], game4[0][2]); printf("\t %c  | %c  | %c ", game5[0][0], game5[0][1], game5[0][2]); printf("\t %c  | %c  | %c ", game6[0][0], game6[0][1], game6[0][2]);
 	printf("\n---|---|---");  printf("\t---|---|---");  printf("\t---|---|---\n");
-	printf(" %c  | %c  | %c ", game4[0][0], game4[0][1], game4[0][2]); printf("\t %c  | %c  | %c ", game5[0][0], game5[0][1], game5[0][2]); printf("\t %c  | %c  | %c ", game6[0][0], game6[0][1], game6[0][2]);
+	printf(" %c  | %c  | %c ", game4[1][0], game4[1][1], game4[1][2]); printf("\t %c  | %c  | %c ", game5[1][0], game5[1][1], game5[1][2]); printf("\t %c  | %c  | %c ", game6[1][0], game6[1][1], game6[1][2]);
 	printf("\n---|---|---");  printf("\t---|---|---");  printf("\t---|---|---\n");
-	printf(" %c  | %c  | %c ", game4[0][0], game4[0][1], game4[0][2]); printf("\t %c  | %c  | %c ", game5[0][0], game5[0][1], game5[0][2]); printf("\t %c  | %c  | %c ", game6[0][0], game6[0][1], game6[0][2]);
+	printf(" %c  | %c  | %c ", game4[2][0], game4[2][1], game4[2][2]); printf("\t %c  | %c  | %c ", game5[2][0], game5[2][1], game5[2][2]); printf("\t %c  | %c  | %c ", game6[2][0], game6[2][1], game6[2][2]);
 	printf("\n");
 	printf("\n");
 	printf(" %c  | %c  | %c ", game7[0][0], game7[0][1], game7[0][2]); printf("\t %c  | %c  | %c ", game8[0][0], game8[0][1], game8[0][2]); printf("\t %c  | %c  | %c ", game9[0][0], game9[0][1], game9[0][2]);
 	printf("\n---|---|---");  printf("\t---|---|---");  printf("\t---|---|---\n");
-	printf(" %c  | %c  | %c ", game7[0][0], game7[0][1], game7[0][2]); printf("\t %c  | %c  | %c ", game8[0][0], game8[0][1], game8[0][2]); printf("\t %c  | %c  | %c ", game9[0][0], game9[0][1], game9[0][2]);
+	printf(" %c  | %c  | %c ", game7[1][0], game7[1][1], game7[1][2]); printf("\t %c  | %c  | %c ", game8[1][0], game8[1][1], game8[1][2]); printf("\t %c  | %c  | %c ", game9[1][0], game9[1][1], game9[1][2]);
 	printf("\n---|---|---");  printf("\t---|---|---");  printf("\t---|---|---\n");
-	printf(" %c  | %c  | %c ", game7[0][0], game7[0][1], game7[0][2]); printf("\t %c  | %c  | %c ", game8[0][0], game8[0][1], game8[0][2]); printf("\t %c  | %c  | %c ", game9[0][0], game9[0][1], game9[0][2]);
+	printf(" %c  | %c  | %c ", game7[2][0], game7[2][1], game7[2][2]); printf("\t %c  | %c  | %c ", game8[2][0], game8[2][1], game8[2][2]); printf("\t %c  | %c  | %c ", game9[2][0], game9[2][1], game9[2][2]);
 	printf("\n");
 	printf("\n");
 
@@ -162,13 +168,47 @@ int checkFreeSpaces()
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			if (game1[i][j] != ' ' || game2[i][j] != ' ' || game3[i][j] != ' ' || game4[i][j] != ' ' || game5[i][j] != ' ' || game6[i][j] != ' ' || game7[i][j] != ' ' || game8[i][j] != ' ' || game9[i][j] != ' ')
+			if (game1[i][j] != ' ')
+			{
+				freeSpaces--;
+			}
+			else if (game2[i][j] != ' ')
+			{
+				freeSpaces--;
+			}
+			else if (game3[i][j] != ' ')
+			{
+				freeSpaces--;
+			}
+			else if (game4[i][j] != ' ')
+			{
+				freeSpaces--;
+			}
+			else if (game5[i][j] != 0)
+			{
+				freeSpaces--;
+			}
+			else if (game6[i][j] != ' ')
+			{
+				freeSpaces--;
+			}
+			else if (game7[i][j] != ' ')
+			{
+				freeSpaces--;
+			}
+			else if (game8[i][j] != ' ')
+			{
+				freeSpaces--;
+			}
+			else if (game9[i][j] != ' ')
 			{
 				freeSpaces--;
 			}
 		}
+		
 	}
 	return freeSpaces;
+	printf("%d", freeSpaces);
 }
 void printWinner(char winner)
 {
@@ -214,11 +254,11 @@ void printWinner(char winner)
 //	}
 //	return winner;
 //}
-
-void playerMove()
+int x, y;
+int x, y = 0;
+void playerMoveX()
 {
 	int choice;
-	int x, y;
 	printf("Please enter a number 1-9 to decide which sub-game you would like to start in: ");
 	scanf_s("%d", &choice);
 
