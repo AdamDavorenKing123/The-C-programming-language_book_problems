@@ -16,26 +16,48 @@
 //void printWinner(char winner);
 //
 //int main() {
+//    //printf("Each turn, you mark one of the small squares. When you get three in a row on a small board, you have won that board\nTo win the game, you need to win three small boards in a row.\n");
+//    //printf("You don not get to pick which of the nine boards to play on.That is determined by your opponents previous move\nWhichever square he picks, that is the board you must play in next. (And whichever square you pick will determine which board he plays on next.)\n");
+//    //printf("\n FAQS \n");
+//    //printf("\n1, What if my opponent sends me to a board that is already been won?\n\tIn that case, congratulations, you get to go anywhere you like, on any of the other boards.\n\t(This means you should avoid sending your opponent to an already - won board!)\n");
+//    //printf("2, What if one of the small boards results in a tie ? I recommend that the board counts for neither X nor O.\n\tBut, if you feel like a crazy variant, you could agree before the game to count a tied board for both X and O.");
+//    //printf("\n\n\n");
 //    char winner = ' '; // If winner == ' ', no winner yet
 //    int currentSubGame;  // Track the current sub-game
 //    resetBoard();        // Initialize the boards
 //    printBoard();
+//    do {
+//        printf("Choose the starting sub-game (1-9): "); // Prompt the player to select the starting sub-game
+//        scanf_s("%d", &currentSubGame);
+//        currentSubGame -= 1;       // Adjusts to 0-based indexing  [ 0 <-> 8 ][][]
+//        if (currentSubGame < 0 || currentSubGame > 8)
+//        {
+//            printf("INVALID SELECTION. Please choose a number between 1 and 9: ");
+//            scanf_s("%d", &currentSubGame);
+//        }
+//    } while (currentSubGame > 0 || currentSubGame < 8);
+//    
+////    //////////////////////////////////////////////////////////////////////////////////////////// DO NOT TOUCH
+//  //  if (currentSubGame < 0 || currentSubGame > 8) { 
+//  //      printf("INVALID SELECTION. Please choose a number between 1 and 9: ");
+//  //  }
 //
-//    printf("Choose the starting sub-game (1-9): ");  // Prompt the player to select the starting sub-game
-//    scanf_s("%d", &currentSubGame);
-//    currentSubGame -= 1;       // Adjusts to 0-based indexing  [ 0 <-> 8 ][][]
-//
-//    // X goes first
-//    playerMoveX(currentSubGame);
-//    printBoard();
-//
-//    while (currentSubGame < 0|| currentSubGame > 8) { 
+//  //  printf("exited while loop ");
+//  //  while (currentSubGame < 0 || currentSubGame > 8) 
+//  //  {
+//		//
+//		//scanf_s("%d", &currentSubGame);
+//		//currentSubGame -= 1;
+//  //      playerMoveX(currentSubGame);
+//  //      printBoard();
+//  //  }
+// /*   while (currentSubGame < 0|| currentSubGame > 8) { 
 //        printf("INVALID SELECTION. Please choose a number between 1 and 9: ");
 //        scanf_s("%d", &currentSubGame);
 //        currentSubGame -= 1;
-//    }
+//    }*/
 //  
-//    while (winner == ' ' && checkFreeSpaces() > 0) {   // while there is no winner and there are still free spaces
+//        while (winner == ' ' && checkFreeSpaces() > 0) {   // while there is no winner and there are still free spaces
 //
 //        // Logic to determine the next sub-game based on the last move
 //        // For now, allow player to choose the next sub-game freely
