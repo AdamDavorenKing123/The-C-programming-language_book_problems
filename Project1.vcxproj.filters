@@ -60,5 +60,14 @@
     <ClCompile Include="SuperTicTacToe.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SuperTicTacToeV2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperTicTacToeV3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperTicTacToeV4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
