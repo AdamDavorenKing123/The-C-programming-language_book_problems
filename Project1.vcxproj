@@ -144,6 +144,7 @@
     <ClCompile Include="SuperTicTacToe.c" />
     <ClCompile Include="SuperTicTacToeV2.c" />
     <ClCompile Include="SuperTicTacToeV3.c" />
+    <ClCompile Include="SuperTicTacToeV4.c" />
     <ClCompile Include="WritingFiles.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
